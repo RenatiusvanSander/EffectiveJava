@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.*;
  */
 public class InstrumentedSetTest {
 
-    private Set<String> set = Set.of("Remy", "Pamdi", "Pamelali");
+    private final Set<String> set = Set.of("Remy", "Pamdi", "Pamelali");
 
     @Test
     public void constructorInstrumentedSetWith3ElementsTest() {
