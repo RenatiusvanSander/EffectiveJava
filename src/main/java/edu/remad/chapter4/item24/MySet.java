@@ -1,9 +1,6 @@
 package edu.remad.chapter4.item24;
 
-import java.util.AbstractSet;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.Spliterator;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
@@ -11,15 +8,18 @@ import java.util.stream.Stream;
 public class MySet<E> extends AbstractSet<E> {
 
     public MySet() {
-        myIterator = new MyIterator(iterator());
+        set = new HashSet<>();
+        myIterator = new MyIterator(set.iterator());
     }
 
-    public MySet(Set<E> set) {
-        this.addAll(set);
-        myIterator = new MyIterator(iterator());
+    public MySet(Collection<? extends E> c) {
+        set = new HashSet<>();
+        set.addAll(c);
+        myIterator = new MyIterator(set.iterator());
     }
 
     private final MyIterator myIterator;
+    private Set<E> set;
 
     @Override
     public Iterator<E> iterator() {
@@ -28,32 +28,32 @@ public class MySet<E> extends AbstractSet<E> {
 
     @Override
     public void forEach(Consumer<? super E> action) {
-        super.forEach(action);
+        set.forEach(action);
     }
 
     @Override
     public boolean removeIf(Predicate<? super E> filter) {
-        return super.removeIf(filter);
+        return set.removeIf(filter);
     }
 
     @Override
     public Spliterator<E> spliterator() {
-        return super.spliterator();
+        return set.spliterator();
     }
 
     @Override
     public Stream<E> stream() {
-        return super.stream();
+        return set.stream();
     }
 
     @Override
     public Stream<E> parallelStream() {
-        return super.parallelStream();
+        return set.parallelStream();
     }
 
     @Override
     public int size() {
-        return 0;
+        return set.size();
     }
 
     private class MyIterator implements Iterator<E> {
@@ -72,6 +72,6 @@ public class MySet<E> extends AbstractSet<E> {
             return iterator.next();
         }
 
-        private Iterator<E> iterator = null;
+        private final Iterator<E> iterator;
     }
 }
