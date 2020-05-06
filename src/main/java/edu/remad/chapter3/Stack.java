@@ -14,7 +14,7 @@ public class Stack {
     }
 
     public Object pop() {
-        if(size == 0) {
+        if (size == 0) {
             throw new EmptyStackException();
         }
         Object result = elements[--size];
@@ -28,7 +28,7 @@ public class Stack {
     }
 
     @Override
-    public  Stack clone() {
+    public Stack clone() {
         try {
             Stack result = (Stack) super.clone();
             result.elements = elements.clone();
@@ -39,12 +39,12 @@ public class Stack {
     }
 
     private void ensureCapacity() {
-        if(elements.length == size) {
+        if (elements.length == size) {
             elements = copyOf(elements, 2 * size + 1);
         }
     }
 
-    private  Object[] elements;
+    private Object[] elements;
     private int size = 0;
-    private  static  final int DEFAUlT_INITIAL_CAPACITY = 16;
+    private static final int DEFAUlT_INITIAL_CAPACITY = 16;
 }
