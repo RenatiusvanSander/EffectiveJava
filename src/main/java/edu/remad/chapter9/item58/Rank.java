@@ -13,7 +13,7 @@ public enum Rank {
     /**
      * Constructs the rank with a numbered value.
      *
-     * @param valueAsInt The value of rank is {@code int}.
+     * @param valueAsInt The value of rank is in {@code int}.
      */
     Rank(final int valueAsInt) {
         value = valueAsInt;
