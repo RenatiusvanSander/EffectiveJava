@@ -17,12 +17,12 @@ public class StringBuilderPerformance {
     public static void main(String[] args) {
         StopWatch watchPerformStringConcatenation = new StopWatch();
         watchPerformStringConcatenation.start();
-        String one = performStringConcatenation();
+        performStringConcatenation();
         watchPerformStringConcatenation.stop();
 
         StopWatch watchUseStringBuilder = new StopWatch();
         watchUseStringBuilder.start();
-        String two = useStringBuilder();
+        useStringBuilder();
         watchUseStringBuilder.stop();
 
         TimeUnit milliseconds = TimeUnit.MILLISECONDS;
