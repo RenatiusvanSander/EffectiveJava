@@ -7,7 +7,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.jupiter.version>5.7.0-M1</junit.jupiter.version>
         <junit.jupiter.engine>5.7.0-M1</junit.jupiter.engine>
-        <junit4.version>4.13</junit4.version>
+        <junit4.version>4.13.1</junit4.version>
     </properties>
 
     <dependencies>
